@@ -2,14 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 
-const MyTextBox = () => {
+const MyTextBox = (props) => {
+  const helper = (value) => {
+    setValue(value);
+    props.setUserInput(value);
+  }
   const [value, setValue] = useState('');
   return (
     <div>
       <input
         type="text"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => helper(e.target.value)}
       />
     </div>
 
@@ -28,7 +32,7 @@ function App() {
   const [userInput, setUserInput] = useState('Hello');
   return (
     <div>
-      <MyTextBox />
+      <MyTextBox setUserInput={setUserInput}/>
       <ShowUserInput userInput={userInput} />
     </div>
   );
