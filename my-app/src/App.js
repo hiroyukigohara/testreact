@@ -21,7 +21,7 @@ const MyTextBox = (props) => {
 }
 
 const GetDataFromAPI = () => {
-  const data = fetch('https://oldapi.com');
+  const data = fetch('https://newapi.com');
   return data;
 }
 
