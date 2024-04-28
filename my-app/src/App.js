@@ -20,6 +20,11 @@ const MyTextBox = (props) => {
   );
 }
 
+const GetDataFromAPI = () => {
+  const data = fetch('https://oldapi.com');
+  return data;
+}
+
 const ShowUserInput = (props) => {
   return (
     <div>
